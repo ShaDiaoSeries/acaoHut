@@ -42,6 +42,7 @@ ul {
 #acao-playground #acao-butt {
   width: 100%;
   height: 90%;
+  cursor: pointer;
 }
 
 @keyframes white-to-yellow {

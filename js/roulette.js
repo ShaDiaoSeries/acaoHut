@@ -89,11 +89,20 @@ let roulette = {
                 this.roulette.style.transform = `rotate(-75000deg)`;
                 this.roulette.style.transition = `transform 100s ease-in-out`;
             }, 100);
-            addMsgToChatbox('居然敢公然作弊，接受圣嘉然的惩罚吧，你今后上网时将无法逃脱出嘉然小姐的幻境！', false, false, 'red');
-            setInterval(() => {
-                addMsgToChatbox(nameToSubLinkMap['嘉然'], false, false, 'red');
-            }, 1000);
-            document.write(`<p style="font-size:100px;color:red;">圣嘉然的惩罚</p><p style="font-size:100px;color:red;">降&nbsp;&nbsp;临&nbsp;&nbsp;了&nbsp;&nbsp;！</p>`);
+            addMsgToChatbox('居然敢公然作弊，接受圣嘉然的惩罚吧，你今后上网时将无法逃脱出嘉然小姐的幻境！', false, false, 'red')
+                .then(() => new Promise((resolve, reject) => {
+                    var remainTimes = 10;
+                    var printDiana = setInterval(() => {
+                        remainTimes--;
+                        addMsgToChatbox(nameToSubLinkMap['嘉然'], false, false, 'red');
+                        if (remainTimes === 0) {
+                            clearInterval(printDiana);
+                            resolve();
+                        }
+                    }, 1000);
+                })).then(() => {
+                    document.write(`<p style="font-size:100px;color:red;">圣嘉然的惩罚</p><p style="font-size:100px;color:red;">降&nbsp;&nbsp;临&nbsp;&nbsp;了&nbsp;&nbsp;！</p>`);
+                });
         } else {
             // 1. 随机中奖结果
             // 设置中奖数据的概率范围

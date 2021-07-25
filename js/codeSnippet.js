@@ -12,4 +12,6 @@ document.getElementById("acao-butt").onclick = function() {
     addMsgToChatbox(acaoMoaning[mornIdx], false, false);
 };
 
-addMsgToChatbox("摸够阿草银屯之后，记得输入“支持阿草”支持一下阿草哦~", false, true);
+addMsgToChatbox("你好，欢迎来到阿草……之屋！", false, true)
+    .then(() => addMsgToChatbox("在这里，你可以随意抚摸阿草的银屯，满足你对福瑞的欲望！", false, true))
+    .then(() => addMsgToChatbox("摸够阿草银屯之后，可以输入“抽奖”开启新玩法哦~", false, true));

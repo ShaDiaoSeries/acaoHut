@@ -19,13 +19,16 @@ function addMsgWrapper(msg) {
 	addMsgToChatbox(msg, true, false);
 	// 对输入的消息做处理（使用纯前端）
 	var keys = Object.keys(nameToSubLinkMap);
-	if (rouletteHidden && msg.indexOf("支持阿草") >= 0) {
-		addMsgToChatbox(`nice！`, false, true).then(function(result) {
-			document.getElementById("acao-playground").setAttribute("hidden", true);
-			document.getElementById("roulette-area").removeAttribute("hidden");
-			rouletteHidden = false;
-		});
-		return;
+	if (rouletteHidden) {
+		if (msg.indexOf("抽奖") >= 0) {
+			addMsgToChatbox(`欢迎使用UP主抽奖系统，当你在B站上不知道要关注哪个UP主时，可以转动左边的转盘抽一个关注~`, false, true)
+				.then(function() {
+					document.getElementById("acao-playground").setAttribute("hidden", true);
+					document.getElementById("roulette-area").removeAttribute("hidden");
+					rouletteHidden = false;
+				});
+			return;
+		}
 	} else {
 		for (var keyIndex in keys) {
 			var key = keys[keyIndex];
@@ -59,7 +62,7 @@ function addMsgToChatbox(msg, isClient, needDelay, color) {
 	return new Promise(function(resolve, reject) {
 		setTimeout(() => {
 			var appendHtml = isClient
-			? `<li class="t2"><img src="img/soul.jpg"><div class="txt" style="color:${color ? color : 'black'}">` + msg + '</div></li>'
+			? `<li class="t2"><img src="img/soul.webp"><div class="txt" style="color:${color ? color : 'black'}">` + msg + '</div></li>'
 			: `<li class="t1"><img src="img/acao.jpg"><div class="txt" style="color:${color ? color : 'black'}">` + msg + '</div></li>';
 			$("#ui_msg_box").append(appendHtml);
 			scrollMsgBottom();
