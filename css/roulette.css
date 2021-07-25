@@ -1,0 +1,186 @@
+#roulette-area {
+  float: left;
+  margin-left: 5%;
+}
+
+#roulette-area #buffarea {
+  font-size: 30px;
+  color:rgb(115, 172, 30);
+  text-align: center;
+  margin: 0 auto;
+}
+
+#roulette-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 540px;
+  height: 540px;
+  border: 7px solid #b2a98d;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #b2a98d;
+}
+  
+  .roulette-wrap .light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e0ddd1;
+    animation: rotate 5s linear infinite;
+  }
+
+  .roulette-wrap .light span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 10px;
+    height: 100%;
+    border-radius: 50%;
+    transform-origin: center center;
+  }
+
+  .roulette-wrap .light span:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .roulette-wrap .light span:nth-of-type(even):before {
+    background: #fff;
+    animation: white-to-yellow 1s linear infinite;
+  }
+
+  .roulette-wrap .light span:nth-of-type(odd):before {
+    background: #d7a945;
+    animation: white-to-yellow 1s linear reverse infinite;
+  }
+
+  .roulette-wrap .roulette {
+    position: absolute;
+    margin: 20px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .roulette-wrap .roulette-headimg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .roulette-wrap .roulette .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #dfd8be;
+    border-radius: 50%;
+    transform: rotate(90deg);
+  }
+
+  .roulette-wrap .roulette .bg li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 1px;
+    height: 100%;
+    background: #dfd8be;
+    transform-origin: center center;
+  }
+
+  .roulette-wrap .roulette .gift {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+  }
+
+  .roulette-wrap .roulette .gift li {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 45%;
+    height: 45%;
+    transform-origin: right bottom;
+  }
+
+  .roulette-wrap .roulette .gift li span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    height: 70px;
+    margin: auto;
+    transform: rotate(-45deg);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+
+  .roulette-wrap .roulette .gift li:not(.no-gift) span:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 50px;
+    height: 1px;
+    background: #fff;
+  }
+
+  .roulette-wrap .roulette .gift li.no-gift span {
+    background: #fff;
+    line-height: 70px;
+    color: #bfa74f;
+    font-size: 12px;
+  }
+
+  .roulette-wrap .pointer {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: -23px auto;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #fff;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 5px #b9a046;
+    text-align: center;
+    line-height: 16px;
+    color: #b9a046;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .roulette-wrap .pointer:before {
+    content: '';
+    position: absolute;
+    top: -58px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    border-style: solid;
+    border-color: transparent transparent #b9a046 transparent;
+    border-width: 25px 10px 25px 10px;
+  }

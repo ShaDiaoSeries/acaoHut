@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+
+#title {
+  width: 80%;
+  font-size: 5em;
+  top: 1em;
+  margin-left: 5%;
+}
+
+#main-area {
+  width: 100%;
+  margin-top: 2em;
+  align-content: center;
+  float: left;
+}
+
+#acao-playground {
+  float: left;
+  margin-left: 0%;
+  width: 540px;
+  margin-left: 5%;
+}
+
+#acao-playground #acao-title {
+  width: 100%;
+  height: 10%;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(212, 83, 105);
+  margin: 0 auto;
+}
+
+#acao-playground #acao-butt {
+  width: 100%;
+  height: 90%;
+}
+
+@keyframes white-to-yellow {
+  0% {
+    background: #fff;
+  }
+  100% {
+    background: #d7a945;
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
